@@ -1,0 +1,15 @@
+.drink {
+  @include optionState($drinks);
+}
+
+.meal {
+  @include optionState($meals);
+}
+
+.bread {
+  @include optionState($breads);
+}
+
+.cake {
+  @include optionState($cakes);
+}

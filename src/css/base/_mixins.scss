@@ -1,0 +1,50 @@
+@mixin bg-gradient($color, $dif){
+  background: $color;
+  background: -moz-linear-gradient(top,  $color 0%, $dif 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$dif), color-stop(100%,$color));
+  background: -webkit-linear-gradient(top,  $dif 0%,$color 100%);
+  background: -o-linear-gradient(top,  $dif 0%,$color 100%);
+  background: -ms-linear-gradient(top,  $dif 0%,$color 100%);
+  background: linear-gradient(to bottom,  $dif 0%,$color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$dif}', endColorstr='#{$color}',GradientType=0 );
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transform($type, $value){
+  -webkit-transform: $type+'('+$value+')';
+  -moz-transform: $type+'('+$value+')';
+  -o-transform: $type+'('+$value+')';
+  -ms-transform: $type+'('+$value+')';
+  transform: $type+'('+$value+')';
+}
+
+@mixin boxshadow($values){
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin boxsizing($value) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+}
+
+@mixin optionState($color) {
+  &:hover {
+    background: lighten($color, 10%);
+  }
+  &.item-active {
+    background: $active-item;
+  }
+  &.item-disabled {
+    background: darken($color, 30%);
+    color: #fff0ff;
+  }
+}
